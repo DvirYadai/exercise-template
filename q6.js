@@ -3,8 +3,11 @@ function run() {
     const output = document.getElementById("output");
     let out = "";
 /**/
-    // write your code here
-    // out = input + 5;
+    for(let i = 0; i < input.length; i++){
+        if(Number(input[i]) % 2 === 0 && Number(input[i + 1]) % 2 === 0){
+            out += ((input[i]) + '-');
+        } else out += input[i];
+    }
 
 /**/
     output.innerText = out;
