@@ -3,8 +3,17 @@ function run() {
     const output = document.getElementById("output");
     let out = "";
 /**/
-    // write your code here
-    // out = input + 5;
+    let arr = JSON.parse(input);
+    let text = "";
+    for(let i = 0; i < arr.length; i++){
+        text += 'row ' + i;
+        for(let j = 0; j < arr[i].length; j++){
+            text += '\n';
+            text += arr[i][j];
+        }
+        text += '\n';
+    }
+    out = text;
 
 /**/
     output.innerText = out;
