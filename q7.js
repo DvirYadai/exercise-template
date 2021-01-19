@@ -2,7 +2,7 @@ function run() {
     const input = document.getElementById("input").value;
     const output = document.getElementById("output");
     let out = "";
-/**/
+
     let arr = JSON.parse(input);
     let newArr = [];
     while((arr.length !== 0)){
@@ -11,7 +11,7 @@ function run() {
         arr.splice(index, 1);
     }
     out = newArr;
-/**/
+
     output.innerText = out;
 }
 
