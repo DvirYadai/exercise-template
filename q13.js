@@ -1,6 +1,6 @@
 let arr = [];
 let i = 1;
-function display() {
+function run() {
     const output = document.getElementById("output");
     let out = [];
     out = arr;
