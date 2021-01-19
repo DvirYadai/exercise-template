@@ -1,27 +1,28 @@
-// function run() {
-//     const input = document.getElementById("input").value;
-//     const output = document.getElementById("output");
-//     let out = "";
-// /**/
-//     let arr = JSON.parse(input);
-//     let newArr = [];
-//     let removed = [];
-//     for(let i = 0; i < arr.length; i++){
-//         let tempNum = arr[i];
-//         let y = i;
-//         for(let j = 1; j < arr.length - 1; j++){
-//             if(arr[j] > tempNum){
-//                 tempNum = arr[j];
-//                 y = j;
-//             }
-//         }
-//         newArr.push(tempNum);
-//         removed = arr.splice(y, 1);
-//     }
-//     out = newArr;
+function run() {
+    const input = document.getElementById("input").value;
+    const output = document.getElementById("output");
+    let out = "";
+/**/
+    let arr = JSON.parse(input);
+    let newArr = [];
+    while((arr.length !== 0)){
+        let index = indexOfBiggest(arr);
+        newArr.unshift(arr[index]);
+        arr.splice(index, 1);
+    }
+    out = newArr;
+/**/
+    output.innerText = out;
+}
 
-// /**/
-//     output.innerText = out;
-// }
-
-// [2,4,3,6,5]
+function indexOfBiggest(arr){
+    let max = arr[0];
+    let index = 0;
+    for(let i = 1; i < arr.length; i++){
+        if(max < arr[i]){
+            max = arr[i];
+            index = i;
+        }
+    }
+    return index;
+}
